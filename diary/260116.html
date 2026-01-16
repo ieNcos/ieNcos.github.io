@@ -1,0 +1,38 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<h1>260116</h1>
+
+<h2>诺特定理</h2>
+
+<p>
+	基本了解了诺特定理，进行了很简单的计算，i.e.空间平移. （甚至还没有check能量动量张量）
+</p>
+
+<p>总结：</p>
+
+<ol>
+	<li>诺特定理的基本思路：
+		对称性&harr;
+		运动方程在对称变换后不变&larr;
+		S在对称变换前后不变&harr;
+		
+		L的变化量至多为散度，i.e.
+		$$ \delta L = \alpha \partial_\mu J^\mu $$
+		
+		meanwhile, 在真实路径上L的变化量可以被化简成一个简单形式：
+		$$\delta L = \alpha \partial_\mu \left(\frac{\partial L}{\partial (\partial_\mu \phi)}\right) \delta\phi$$
+		
+		则可得到守恒流：
+		$$ j^\mu = \left(\frac{\partial L}{\partial (\partial_\mu \phi)}\right) \delta\phi - J^\mu $$</li>
+	<li>运动方程不变的含义：
+		变换后的\(\phi'\)被\(\phi\) 所决定，因此\(\phi'\)的方程也是\(\phi\)的方程；
+		则“不变”是指，把\(\phi'\)代入到运动方程里，然后视作\(\phi\)的方程，应该仍然是原本的运动方程</li>
+	<li>为什么变换前后S不变？A: 这不是推论，这是一个额外的要求. 运动方程不变的对称性叫做动力学对称性，不一定导致守恒量. 诺特定理要求S不变（which is stricter）<br>
+		体现差异的例子：自由粒子的标度变换\(x \rightarrow \lambda x\)不改变运动方程，但是并不带来守恒量</li>
+    <li>在场论情况，诺特定理带来的守恒量不是共轭动量密度\(\pi = \frac{\partial L}{\partial \dot \phi}\)，而是诺特动量密度：\(-\pi \frac {\partial \phi}{\partial x}\)；前者和粒子场对易，而后者才能在点粒子的情况下退化为动量算符（还有一些细节没有计算，总之这两个东西不同）；诺特动量反映了一个事实：完全均匀的场一定不能传递动量，即使共轭动量密度不为0</li>
+</ol>
+
+<p>
+	<a href="../index.html">back</a>
+</p>
