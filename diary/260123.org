@@ -1,0 +1,38 @@
+* 260123
+** Email
+配置好了emacs的邮件客户端，现在可以不用浏览器就能回复hhq的邮件了(x
+
+isync居然几乎没有给我找任何麻烦，仅仅是重命名的时候需要注意区分channel，
+而不是用gemini说的冒号语法，
+
+anyway，我自己也没怎么研究，全靠gemini；
+之后配置都会同步到dotfile里。
+
+** 本研
+今天没能去见hhq，于是决定写一下论文总结发给他，免得等着下次约上时间猴年马月了
+
+** 健身
+今天遵循gemini的训练计划练用哑铃了一会儿，算是个开始了
+
+** 冬令营
+群友已经去冬令营现场了，遥祝比赛顺利
+（tmd不让我去x）
+
+** vector bundle
+同伦的空间有等价的向量丛\\
+这需要证明2个同伦的映射拉取出来的vector bundle彼此同构\\
+
+核心难点在于对于nontrivial的bundle来说，没法定义全局的同构函数，
+文章里使用了一个类似于加权平均的方法，有空再看
+
+诶，估计之后还是得看，要不然后面看不懂
+
+#+begin_export html
+<p><br/></p>
+<p>
+	<a href="../index.html">back</a>
+</p>
+
+<script src="https://giscus.app/client.js" data-repo="ieNcos/ieNcos.github.io" data-repo-id="R_kgDOQ1upBA" data-category="[ENTER CATEGORY NAME HERE]" data-category-id="[ENTER CATEGORY ID HERE]" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async>
+</script>
+#+end_export
