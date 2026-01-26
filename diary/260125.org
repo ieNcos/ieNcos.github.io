@@ -7,7 +7,7 @@
 #+latex_header: \usepackage{physics}
 #+latex_header: \usepackage[margin=2cm]{geometry}
 
-n* topology
+* topology
 对纤维丛的概念有了最初步的了解，简单看了fredholm算子的定义。
 
 * 健身
