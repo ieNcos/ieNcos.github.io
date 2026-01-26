@@ -30,6 +30,19 @@
 	<a href="../index.html">back</a>
 </p>
 
-<script src="https://giscus.app/client.js" data-repo="ieNcos/ieNcos.github.io" data-repo-id="R_kgDOQ1upBA" data-category="[ENTER CATEGORY NAME HERE]" data-category-id="[ENTER CATEGORY ID HERE]" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async>
+<script src="https://giscus.app/client.js"
+        data-repo="ieNcos/ieNcos.github.io"
+        data-repo-id="R_kgDOQ1upBA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQ1upBM4C1Eoh"
+        data-mapping="pathname"
+        data-strict="1"
+         data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
 </script>
 #+end_export
