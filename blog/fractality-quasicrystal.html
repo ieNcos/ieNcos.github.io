@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-29 Thu 13:02 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>两篇论文的概述</title>
+<meta name="author" content="师昊阳" />
+<meta name="generator" content="Org Mode" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">两篇论文的概述</h1>
+<div id="outline-container-org048c1af" class="outline-2">
+<h2 id="org048c1af"><span class="section-number-2">1.</span> Family of Aperiodic Tilings with Tunable Quantum Geometric Tensor</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org66cd4cb" class="outline-3">
+<h3 id="org66cd4cb"><span class="section-number-3">1.1.</span> 总体思路：</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+准晶总是满足一些奇怪的旋转对称性，这导致不同准晶之间不易“连续调节”，
+i.e. 没法从一种准晶连续变化到另一种<br />
+本文构造了一个可调节的准晶族，由 \(l \in [0, 1]\) 调控，其中 \( l = 0, 1 \)
+的时候是平凡的， \( l \) 在接近0.5的一个区间内的时候是topological nontrivial的。
+</p>
+
+<p>
+由于拓扑性质可以调节，Quantum Geometric Tensor 也受到调节
+</p>
+
+<p>
+说明：这是一种平铺地砖准晶，l决定了地砖的形状，后文直接称之为 <b>l-准晶</b> 。
+</p>
+</div>
+</div>
+<div id="outline-container-org0e93f05" class="outline-3">
+<h3 id="org0e93f05"><span class="section-number-3">1.2.</span> Geometric control of topology</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+这部分主要讲了l如何调节l-准晶的拓扑性质，
+也就是具体计算了给定l下材料是否有拓扑效应
+</p>
+</div>
+<div id="outline-container-org37a2eeb" class="outline-4">
+<h4 id="org37a2eeb"><span class="section-number-4">1.2.1.</span> 模型</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+\(l\) -quasicrystal is a generalization of the QWZ insulator model，
+</p>
+
+<p>
+QWZ insulator 是可以构造量子反常霍尔效应的几乎最简单的模型，满足二维、双带、周期边界，
+哈密顿量的参数d(k)环绕原点的windingnumber就是Chern数，
+决定了横向电导 \( \sigma_{xy} \)的大小，这个对应关系可以直接由kubo formular证明<br />
+我对kubo formular不太熟悉，之前只做过一部分推导。<br />
+</p>
+
+<p>
+QWZ insulator适用于晶体+周期便捷条件，为了推广可以把它变换到实空间，
+满足：每个原子有两个能级、相邻原子之间有确定强度的hopping
+（从k空间变换过来计算得到）<br />
+然后修改原子之间的夹角和距离就可以得到任意分布的二维材料（这里只需要l-准晶）的哈密顿量，
+新哈密顿量保留了上述3个特征，其中hopping强度还依赖原子的距离和夹角，
+在距离相等、夹角垂直（i.e. 退化到qwz insulator的原子分布）的时候，
+哈密顿量也退化到qwz insulator的哈密顿量
+</p>
+
+<p>
+作者用这个模型主要计算两个量：local Chern marker 和 spectral localizer index
+</p>
+</div>
+</div>
+<div id="outline-container-orgbf38b81" class="outline-4">
+<h4 id="orgbf38b81"><span class="section-number-4">1.2.2.</span> local Chern marker</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+局域化的陈数：
+</p>
+<ol class="org-ol">
+<li>在物体内部，local Chern marker的值很接近于总陈数。</li>
+<li>在有限空间（反例：周期边界条件）总积分为0</li>
+</ol>
+
+<p>
+第二个性质和体边对应有很大关系：体态 \(C_{\mathbf{r}} > 0\) ，
+总积分有得是0，则边缘的 \(C_{\mathbf{r}}\) 就得 \(<0\) 。
+</p>
+
+
+<p>
+local Chern marker在实空间可以表示陈数的原因比较复杂，相关的拓扑学论证我不太会
+但是可以如下定性理解：
+</p>
+
+<p>
+\[ C_{\mathbf{r}_\alpha} = 2\pi \text{Im} \sum_l \bra{\mathbf{r}_\alpha, l}
+\hat P [ \hat Q \hat X, \hat P \hat Y ] \hat P \ket{ \mathbf{r}_\alpha, l}
+\]
+</p>
+
+<p>
+\(\hat P\) 是向占据态投影的算符， \(\hat Q = 1-\hat P\) ，
+这个算符简单理解就是，在占据态的“子空间”内部， \(\hat X\) 和 \(\hat Y\)
+有多大的非交换性。<br />
+说明：作为参考，在空间里 \([\hat X, \hat Y] = 0\) ，两个方向完全对易。
+则经过 \(\hat P\) 投影后二者的非交换性体现的正是能带的“弯曲程度”。
+</p>
+
+<p>
+具体计算：用哈密顿量求出具体的本征态，然后构造投影算符计算即可。
+</p>
+</div>
+</div>
+<div id="outline-container-orge718873" class="outline-4">
+<h4 id="orge718873"><span class="section-number-4">1.2.3.</span> 关于local Chern marker的相关计算结果</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+保持 \(E_F=1.15t\) ，调节 \(l\) 会发生拓扑相变。
+</p>
+
+<p>
+光谱函数可以用来确认能隙里的edge state 的存在性。
+</p>
+
+<p>
+然后计算这个态的local chern marker, 确认这个态是拓扑的。
+</p>
+
+<p>
+在 \(l = 0.23\) 的时候是平凡态，在 \(l = 0.33\) 的时候是拓扑态<br />
+这部分的FIG 2 (b)(c) 我看不懂，作者说一张有边缘态，
+另一张没有。
+</p>
+</div>
+</div>
+<div id="outline-container-orgf24abf4" class="outline-4">
+<h4 id="orgf24abf4"><span class="section-number-4">1.2.4.</span> spectral localizer index</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+local Chern number之外的另一个拓扑指标。天然是整数（因为是特征值的个数差），对杂质扰动更robust。
+</p>
+
+<p>
+而且spectral localizer的最小特征值被称作局域化能隙，只有这个能隙闭合的时候
+才会发生相变。
+</p>
+</div>
+</div>
+<div id="outline-container-org4d5d623" class="outline-4">
+<h4 id="org4d5d623"><span class="section-number-4">1.2.5.</span> 加入杂质</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<p>
+具体操作是加入一个随机势能 \(V_{\alpha, ll'}\) ， \(\alpha\) 表示对格点的依赖；
+这是一个格点内两个能级的相互作用，不是格点之间的。
+</p>
+
+<p>
+具体计算（sig(L)）表明，在 \(l=0.8\) 左右，加入杂质反而导致非拓扑态变成拓扑态。
+揭示了杂质驱动的拓扑态的存在。
+</p>
+
+<p>
+而且FIG.3 还能看出，在 \(sig(L)=0\) 的时候，局域化能隙确实很接近0，符合预期。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org51aefa0" class="outline-3">
+<h3 id="org51aefa0"><span class="section-number-3">1.3.</span> Geometric control of the quantum metric</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+G: 量子度规；
+对金属态比较大，对束缚态比较小，
+</p>
+
+<p>
+满足 \(G \ge C\) ，且实现 \(G=C\) 很有意义
+</p>
+
+<p>
+在 \(l=0.5\) 的时候 \(C\) 和 \(G\) 比较接近，但仍未能让 \(G=C\)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfd6b764" class="outline-2">
+<h2 id="orgfd6b764"><span class="section-number-2">2.</span> Fractality-Induced Topology</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgc10774d" class="outline-3">
+<h3 id="orgc10774d"><span class="section-number-3">2.1.</span> kagome lattice</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+其能带包括一个平带一个狄拉克锥，很容易计算（和石墨烯差不多）
+</p>
+</div>
+</div>
+<div id="outline-container-org4a5543e" class="outline-3">
+<h3 id="org4a5543e"><span class="section-number-3">2.2.</span> breath kagome lattice</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+如果想要计算出看到边缘态，需要设定有限大小的样品并且在实空间计算，
+需要用到kwant包设置晶格，我设置好晶格了，还没研究之后怎么继续计算
+</p>
+</div>
+<div id="outline-container-org0cc4760" class="outline-4">
+<h4 id="org0cc4760"><span class="section-number-4">2.2.1.</span> 性质</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+在相互作用强度为一定比例（一个条件是包间强度高于包内强度，类似于ssh）
+的时候出现边缘态
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdb7bcca" class="outline-3">
+<h3 id="orgdb7bcca"><span class="section-number-3">2.3.</span> first-generation Sierpinski fractals</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+一层分形（说明不需要无限嵌套就可以实现拓扑）
+</p>
+</div>
+<div id="outline-container-org5ffbe5b" class="outline-4">
+<h4 id="org5ffbe5b"><span class="section-number-4">2.3.1.</span> ISR</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+一种重整化算法，把格点数量减少并且用等效相互作用强度替代原来的相互作用；
+其表达式很好推导，而且物理意义比较明显，相当于把扔掉的的格点视作散射过程
+（形如 \(\frac{1}{H-E}\) ）
+</p>
+
+<p>
+使用ISR化简结构，化简后得到breath kagome lattice，
+后者有拓扑现象。因此证明了fractal可以带来拓扑
+</p>
+
+<p>
+这个ISR哈密顿量我算了，用sympy计算一个符号矩阵的逆矩阵即可。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org6f23489" class="outline-3">
+<h3 id="org6f23489"><span class="section-number-3">2.4.</span> 拓扑的具体证明（两个方法）</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-orgd5e6db1" class="outline-4">
+<h4 id="orgd5e6db1"><span class="section-number-4">2.4.1.</span> 特征值 \(\chi\)</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<p>
+计算高对称点K点（i.e. 石墨烯狄拉克锥顶点）
+在旋转下的特征值数量和 \(\Gamma\) 点的差别（这个差值就是 \(\chi\) ），
+如果有差别就是topological nontrivial的
+</p>
+</div>
+</div>
+<div id="outline-container-org0e88358" class="outline-4">
+<h4 id="org0e88358"><span class="section-number-4">2.4.2.</span> 直接计算边缘态</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<ol class="org-ol">
+<li>边缘态的能量需要满足 \(E_c = a(E_c)\) ，其中 \(a\) 是前文 \(ISR\) 计算得到的
+onsite potential<br /></li>
+</ol>
+<p>
+按我现在的理解，这个成立的原因是：足够多次ISR之后，空间尺度变得很大，导致边缘态
+真的“足够”边缘，基本仅仅存在于边界一个格点上，于是能量就是onsite potential \(a(E_c)\)
+</p>
+<ol class="org-ol">
+<li>另一个条件是 \(v < 1\) ，也类似于ssh模型，要求intracell hopping \(<\) intercell hopping</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org31a17d5" class="outline-3">
+<h3 id="org31a17d5"><span class="section-number-3">2.5.</span> other models</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+后文讨论了4、5中不同的分形材料，告诉大家用前文的方法都可以证明其具有拓扑性
+</p>
+
+<p>
+展望了ISR的更多应用场景
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge038097" class="outline-2">
+<h2 id="orge038097"><span class="section-number-2">3.</span> 想法：</h2>
+<div class="outline-text-2" id="text-3">
+<ol class="org-ol">
+<li>亟待用计算机做实空间的具体计算，算出边缘态，并且算一算local chern number</li>
+<li>两篇文章都提供了一些方向展望，第一篇说可以继续调参优化 \(C \le G\) 的不等式；
+第二篇文章说可以尝试在更多情景应用ISR，或许我应该做这些事？</li>
+</ol>
+</div>
+</div>
+</div>
+</body>
+</html>
