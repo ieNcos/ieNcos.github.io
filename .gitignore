@@ -5,3 +5,5 @@
 **/*.tex
 **/*.org
 **/#*#
+blog/*
+!blog/*.html
