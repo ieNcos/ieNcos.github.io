@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Jarzynski EQ</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Jarzynski-EQ_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Jarzynski-EQ_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Jarzynski-EQ_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Jarzynski-EQ_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="Jarzynski-EQ_files/libs/quarto-html/popper.min.js"></script>
+<script src="Jarzynski-EQ_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Jarzynski-EQ_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Jarzynski-EQ_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Jarzynski-EQ_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Jarzynski-EQ_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Jarzynski-EQ_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Jarzynski-EQ_files/libs/bootstrap/bootstrap-f1d43a40fbe9494f81ec2edc1aace18b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#jarzynski-eq" id="toc-jarzynski-eq" class="nav-link active" data-scroll-target="#jarzynski-eq">Jarzynski EQ</a>
+  <ul class="collapse">
+  <li><a href="#引言" id="toc-引言" class="nav-link" data-scroll-target="#引言">引言</a></li>
+  <li><a href="#定理内容" id="toc-定理内容" class="nav-link" data-scroll-target="#定理内容">定理内容</a></li>
+  <li><a href="#绝热情况" id="toc-绝热情况" class="nav-link" data-scroll-target="#绝热情况">绝热情况</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Jarzynski EQ</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><span class="math inline">\(\newcommand{\z}{\mathbf{z}}\)</span></p>
+<section id="jarzynski-eq" class="level1">
+<h1>Jarzynski EQ</h1>
+<section id="引言" class="level2">
+<h2 class="anchored" data-anchor-id="引言">引言</h2>
+<p>Jarzynski equation是少有的关于非平衡态的公式：</p>
+<p><span class="math display">\[ \langle \text{exp}(- \beta W) \rangle = \text{exp}(- \beta \Delta F) \]</span></p>
+<p>由此还可以得到</p>
+<p><span class="math display">\[ \text{exp}(- \beta \langle W \rangle) &lt;= \langle \text{exp}(- \beta W) \rangle = \text{exp}(- \beta \Delta F) \]</span></p>
+<p>于是有</p>
+<p><span class="math display">\[ \langle W \rangle \geq \Delta F\]</span></p>
+<p>这正是热力学第二定律. 因此Jarsynski EQ被视作热力学第二定律的推广.</p>
+</section>
+<section id="定理内容" class="level2">
+<h2 class="anchored" data-anchor-id="定理内容">定理内容</h2>
+<p><span class="math display">\[ \langle \text{exp}(- \beta W) \rangle = \text{exp}(- \beta \Delta F) \]</span></p>
+<p>这里我们要说清楚上式的含义：</p>
+<ol type="1">
+<li><p>该式中的平均是怎么做的</p></li>
+<li><p><span class="math inline">\(\Delta F\)</span>是谁和谁的自由能差</p></li>
+</ol>
+<section id="概念介绍" class="level3">
+<h3 class="anchored" data-anchor-id="概念介绍">概念介绍</h3>
+<p>引入一些概念：</p>
+<ol type="1">
+<li>我们考虑的是经典系综<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+<ol type="1">
+<li>一共<span class="math inline">\(N\)</span>个粒子，相空间<span class="math inline">\((p, q)\)</span>是<span class="math inline">\(6N\)</span>维的.</li>
+<li>每个微观态由相空间里的一个点<span class="math inline">\(\mathbf{z}\)</span>来表示. 微观态意味着每一个粒子的速度和动量都是确定的.</li>
+</ol></li>
+<li>哈密顿量<span class="math inline">\(H_\lambda\)</span>依赖于参数<span class="math inline">\(\lambda\)</span>. 注意<span class="math inline">\(\lambda\)</span>不一定是一个参数，也可以是一组参数. 哈密顿量本身是相空间上定义的函数，<span class="math inline">\(H_\lambda(\mathbf{z})\)</span>就是<span class="math inline">\(\mathbf{z}\)</span>这个微观态对应的能量.</li>
+<li>一个系综对应一个相空间中的概率密度分布函数<span class="math inline">\(\rho(z)\)</span>，满足<span class="math inline">\(\int \mathrm{d}z \rho(z) = 1\)</span>.<br>
+比如对于正则系综，我们定义：<span class="math inline">\(Z = \int \mathrm{d}z e^{-\beta H(\mathbf{z})}\)</span>，<span class="math inline">\(\rho(\mathbf{z}) = \frac{1}{Z}e^{-\beta H(\mathbf{z})}\)</span>.</li>
+</ol>
+<p>两种演化方式：</p>
+<ol type="1">
+<li><p>绝热演化：这种情况下系统完全在哈密顿量的控制下演化，满足哈密顿正则方程. 注意哈密顿量本身可以随时间变化，这通过<span class="math inline">\(\lambda\)</span>对时间的依赖<span class="math inline">\(\lambda(t)\)</span>来实现.</p></li>
+<li><p>和热源接触的演化：如果把系统和热源视作一个统一的大系统，则大系统的演化是确定性的. 但是如果把热源视作一个正则系综，那系统本身的演化——即使初始微观态和演化路径<span class="math inline">\(\lambda(t)\)</span>完全确定——也是有随机性的.<br>
+注意，这里的<span class="math inline">\(H_{\lambda(t)}\)</span>并不包括和热源相互作用. 事实上，我们一般不用哈密顿量来描述“和热源接触”这件事，因为这种方式会涉及大热源自身的演化，这并不是我们抽象出“大热源”的目的.</p></li>
+</ol>
+</section>
+<section id="物理情景" class="level3">
+<h3 class="anchored" data-anchor-id="物理情景">物理情景</h3>
+<ol type="1">
+<li><p>初始状态：系统处在哈密顿量<span class="math inline">\(H_{\lambda(t_A)}\)</span>下并和温度为<span class="math inline">\(T\)</span>的大热源接触，达到平衡状态，视作一个正则系综. 这时的哈密顿量<span class="math inline">\(H_{\lambda(t_A)}\)</span>简记作<span class="math inline">\(H_A\)</span>. 把这个初态正则系综的自由能记作<span class="math inline">\(F_A\)</span>. 我们有 <span class="math display">\[\begin{align*}
+Z_A &amp;= \int\mathrm{d}z \mathrm{e}^{-\beta H_A(\mathbf{z})}\\
+F_A &amp;= -k_BT\ln Z_A
+\end{align*}\]</span></p></li>
+<li><p>非平衡过程：根据一个确定的函数<span class="math inline">\(\lambda(t)\)</span>（不是准静态）来调节哈密顿量<span class="math inline">\(H_{\lambda(t)}\)</span>，在这个过程中系统时刻保持和大热源接触. 整个过程的持续时间由<span class="math inline">\(\lambda(t)\)</span>的定义域<span class="math inline">\(t \in [t_A, t_B]\)</span>决定.</p></li>
+<li><p>功：非平衡过程中外界会对系统做功，这个做功对于每一次演化有确定的值. 这里的随机性源于系统初始微观态的随机性（遵从正则系综）和大热源本身的随机性. <span class="math inline">\(\langle W \rangle\)</span>就定义为对上述两个随机性来源求平均的结果.</p></li>
+<li><p>末态：时间运行到<span class="math inline">\(t_B\)</span>之后，哈密顿量就停止演化并保持在<span class="math inline">\(H_{\lambda(t_B)}\equiv H_B\)</span>，而这个固定的哈密顿量就对应了一个正则系综. 这无关乎所经历的非平衡过程是什么样的.<br>
+同样的，我们对末态系综定义： <span class="math display">\[\begin{align*}
+Z_B &amp;= \int\mathrm{d}z \mathrm{e}^{-\beta H_B(\mathbf{z})}\\
+F_B &amp;= -k_\text{B}T\ln Z_B
+\end{align*}\]</span> 则<span class="math inline">\(\Delta F \equiv F_B - F_A\)</span></p></li>
+</ol>
+<p>至此我们已经完整地定义了定理里的所有概念. 下一步是证明这个定理. 我们先证明一个比较简单的情景.</p>
+</section>
+</section>
+<section id="绝热情况" class="level2">
+<h2 class="anchored" data-anchor-id="绝热情况">绝热情况</h2>
+<p>
+<a href="../index.html">back</a>
+</p>
+<script src="https://giscus.app/client.js" data-repo="ieNcos/ieNcos.github.io" data-repo-id="R_kgDOQ1upBA" data-category="Announcements" data-category-id="DIC_kwDOQ1upBM4C1Eoh" data-mapping="pathname" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>本文只在经典情况下讨论Jarzynski EQ，因为该式的量子版本似乎有本质的复杂性——量子系统里功W的定义并不如经典情况明晰. 该式向量子情况的推广远不是把物理量替换成算符那么简单.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

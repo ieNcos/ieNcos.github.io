@@ -7,4 +7,7 @@
 **/#*#
 blog/*
 !blog/*.html
+!blog/*/
+blog/*/*
+!blog/*/*.html
 diary
