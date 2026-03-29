@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Jarzynski EQ</title>
+<title>Berry phase</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,48 +23,19 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="Jarzynski-EQ_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Jarzynski-EQ_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="Jarzynski-EQ_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="Jarzynski-EQ_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="Jarzynski-EQ_files/libs/quarto-html/popper.min.js"></script>
-<script src="Jarzynski-EQ_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Jarzynski-EQ_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Jarzynski-EQ_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Jarzynski-EQ_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Jarzynski-EQ_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Jarzynski-EQ_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Jarzynski-EQ_files/libs/bootstrap/bootstrap-bc17bb83578947ade702a84681ea2863.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="BerryPhase_files/libs/clipboard/clipboard.min.js"></script>
+<script src="BerryPhase_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="BerryPhase_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="BerryPhase_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="BerryPhase_files/libs/quarto-html/popper.min.js"></script>
+<script src="BerryPhase_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="BerryPhase_files/libs/quarto-html/anchor.min.js"></script>
+<link href="BerryPhase_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="BerryPhase_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="BerryPhase_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="BerryPhase_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="BerryPhase_files/libs/bootstrap/bootstrap-bc17bb83578947ade702a84681ea2863.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -76,10 +47,49 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#h1" id="toc-h1" class="nav-link active" data-scroll-target="#h1">h1</a>
+  <li><a href="#wannier-function" id="toc-wannier-function" class="nav-link active" data-scroll-target="#wannier-function">Wannier function</a>
   <ul class="collapse">
-  <li><a href="#h2" id="toc-h2" class="nav-link" data-scroll-target="#h2">h2</a></li>
+  <li><a href="#wannier-function-1" id="toc-wannier-function-1" class="nav-link" data-scroll-target="#wannier-function-1">Wannier function</a></li>
+  <li><a href="#wannier-function-2" id="toc-wannier-function-2" class="nav-link" data-scroll-target="#wannier-function-2">Wannier function</a></li>
+  <li><a href="#wannier-function-3" id="toc-wannier-function-3" class="nav-link" data-scroll-target="#wannier-function-3">Wannier function</a></li>
+  <li><a href="#wannier-function-4" id="toc-wannier-function-4" class="nav-link" data-scroll-target="#wannier-function-4">Wannier function</a></li>
+  <li><a href="#wannier-function-5" id="toc-wannier-function-5" class="nav-link" data-scroll-target="#wannier-function-5">Wannier function</a></li>
+  <li><a href="#wannier-function-6" id="toc-wannier-function-6" class="nav-link" data-scroll-target="#wannier-function-6">Wannier function</a></li>
+  <li><a href="#wannier-function-7" id="toc-wannier-function-7" class="nav-link" data-scroll-target="#wannier-function-7">Wannier function</a></li>
+  <li><a href="#wannier-function-8" id="toc-wannier-function-8" class="nav-link" data-scroll-target="#wannier-function-8">Wannier function</a></li>
+  <li><a href="#wannier-function-9" id="toc-wannier-function-9" class="nav-link" data-scroll-target="#wannier-function-9">Wannier function</a></li>
+  <li><a href="#wannier-function-10" id="toc-wannier-function-10" class="nav-link" data-scroll-target="#wannier-function-10">Wannier function</a></li>
   </ul></li>
+  <li><a href="#wannier-function-21" id="toc-wannier-function-21" class="nav-link" data-scroll-target="#wannier-function-21">Wannier function</a></li>
+  <li><a href="#wannier-function-22" id="toc-wannier-function-22" class="nav-link" data-scroll-target="#wannier-function-22">Wannier function</a></li>
+  <li><a href="#wannier-function-23" id="toc-wannier-function-23" class="nav-link" data-scroll-target="#wannier-function-23">Wannier function</a></li>
+  <li><a href="#wannier-function-24" id="toc-wannier-function-24" class="nav-link" data-scroll-target="#wannier-function-24">Wannier function</a></li>
+  <li><a href="#wannier-function-25" id="toc-wannier-function-25" class="nav-link" data-scroll-target="#wannier-function-25">Wannier function</a></li>
+  <li><a href="#wannier-function-26" id="toc-wannier-function-26" class="nav-link" data-scroll-target="#wannier-function-26">Wannier function</a></li>
+  <li><a href="#wannier-function-27" id="toc-wannier-function-27" class="nav-link" data-scroll-target="#wannier-function-27">Wannier function</a></li>
+  <li><a href="#wannier-function-28" id="toc-wannier-function-28" class="nav-link" data-scroll-target="#wannier-function-28">Wannier function</a></li>
+  <li><a href="#wannier-function-29" id="toc-wannier-function-29" class="nav-link" data-scroll-target="#wannier-function-29">Wannier function</a></li>
+  <li><a href="#wannier-function-30" id="toc-wannier-function-30" class="nav-link" data-scroll-target="#wannier-function-30">Wannier function</a></li>
+  <li><a href="#wannier-function-31" id="toc-wannier-function-31" class="nav-link" data-scroll-target="#wannier-function-31">Wannier function</a></li>
+  <li><a href="#wannier-function-32" id="toc-wannier-function-32" class="nav-link" data-scroll-target="#wannier-function-32">Wannier function</a></li>
+  <li><a href="#wannier-function-33" id="toc-wannier-function-33" class="nav-link" data-scroll-target="#wannier-function-33">Wannier function</a></li>
+  <li><a href="#wannier-function-34" id="toc-wannier-function-34" class="nav-link" data-scroll-target="#wannier-function-34">Wannier function</a></li>
+  <li><a href="#wannier-function-35" id="toc-wannier-function-35" class="nav-link" data-scroll-target="#wannier-function-35">Wannier function</a></li>
+  <li><a href="#wannier-function-36" id="toc-wannier-function-36" class="nav-link" data-scroll-target="#wannier-function-36">Wannier function</a></li>
+  <li><a href="#wannier-function-37" id="toc-wannier-function-37" class="nav-link" data-scroll-target="#wannier-function-37">Wannier function</a></li>
+  <li><a href="#wannier-function-38" id="toc-wannier-function-38" class="nav-link" data-scroll-target="#wannier-function-38">Wannier function</a></li>
+  <li><a href="#wannier-function-39" id="toc-wannier-function-39" class="nav-link" data-scroll-target="#wannier-function-39">Wannier function</a></li>
+  <li><a href="#wannier-function-40" id="toc-wannier-function-40" class="nav-link" data-scroll-target="#wannier-function-40">Wannier function</a></li>
+  <li><a href="#wannier-function-41" id="toc-wannier-function-41" class="nav-link" data-scroll-target="#wannier-function-41">Wannier function</a></li>
+  <li><a href="#wannier-function-42" id="toc-wannier-function-42" class="nav-link" data-scroll-target="#wannier-function-42">Wannier function</a></li>
+  <li><a href="#wannier-function-43" id="toc-wannier-function-43" class="nav-link" data-scroll-target="#wannier-function-43">Wannier function</a></li>
+  <li><a href="#wannier-function-44" id="toc-wannier-function-44" class="nav-link" data-scroll-target="#wannier-function-44">Wannier function</a></li>
+  <li><a href="#wannier-function-45" id="toc-wannier-function-45" class="nav-link" data-scroll-target="#wannier-function-45">Wannier function</a></li>
+  <li><a href="#wannier-function-46" id="toc-wannier-function-46" class="nav-link" data-scroll-target="#wannier-function-46">Wannier function</a></li>
+  <li><a href="#wannier-function-47" id="toc-wannier-function-47" class="nav-link" data-scroll-target="#wannier-function-47">Wannier function</a></li>
+  <li><a href="#wannier-function-48" id="toc-wannier-function-48" class="nav-link" data-scroll-target="#wannier-function-48">Wannier function</a></li>
+  <li><a href="#wannier-function-49" id="toc-wannier-function-49" class="nav-link" data-scroll-target="#wannier-function-49">Wannier function</a></li>
+  <li><a href="#wannier-function-50" id="toc-wannier-function-50" class="nav-link" data-scroll-target="#wannier-function-50">Wannier function</a></li>
   </ul>
 </nav>
 </div>
@@ -87,7 +97,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Jarzynski EQ</h1>
+<h1 class="title">Berry phase</h1>
 </div>
 
 
@@ -104,32 +114,164 @@ window.Quarto = {
 </header>
 
 
-<section id="h1" class="level1">
-<h1>h1</h1>
-<p><span class="math inline">\(a + b\)</span> <span class="math inline">\(\alpha beta chi delta\)</span></p>
-<section id="h2" class="level2">
-<h2 class="anchored" data-anchor-id="h2">h2</h2>
-<p><span class="math inline">\(\alpha\beta\)</span></p>
-<section id="h3" class="level3">
-<h3 class="anchored" data-anchor-id="h3">h3</h3>
-<p>hello, I am content</p>
-<p>你好，这里是中文！</p>
-<ol type="1">
-<li>abd</li>
-<li>dasfa</li>
-<li>这里是列表</li>
-</ol>
-<ul>
-<li>a</li>
-<li>不</li>
-</ul>
+<section id="wannier-function" class="level1">
+<h1>Wannier function</h1>
+<section id="wannier-function-1" class="level2">
+<h2 class="anchored" data-anchor-id="wannier-function-1">Wannier function</h2>
+</section>
+<section id="wannier-function-2" class="level2">
+<h2 class="anchored" data-anchor-id="wannier-function-2">Wannier function</h2>
+</section>
+<section id="wannier-function-3" class="level2">
+<h2 class="anchored" data-anchor-id="wannier-function-3">Wannier function</h2>
+</section>
+<section id="wannier-function-4" class="level2">
+<h2 class="anchored" data-anchor-id="wannier-function-4">Wannier function</h2>
+</section>
+<section id="wannier-function-5" class="level2">
+<h2 class="anchored" data-anchor-id="wannier-function-5">Wannier function</h2>
+</section>
+<section id="wannier-function-6" class="level2">
+<h2 class="anchored" data-anchor-id="wannier-function-6">Wannier function</h2>
+</section>
+<section id="wannier-function-7" class="level2">
+<h2 class="anchored" data-anchor-id="wannier-function-7">Wannier function</h2>
+</section>
+<section id="wannier-function-8" class="level2">
+<h2 class="anchored" data-anchor-id="wannier-function-8">Wannier function</h2>
+</section>
+<section id="wannier-function-9" class="level2">
+<h2 class="anchored" data-anchor-id="wannier-function-9">Wannier function</h2>
+</section>
+<section id="wannier-function-10" class="level2">
+<h2 class="anchored" data-anchor-id="wannier-function-10">Wannier function</h2>
+<section id="wannier-function-11" class="level3">
+<h3 class="anchored" data-anchor-id="wannier-function-11">Wannier function</h3>
+</section>
+<section id="wannier-function-12" class="level3">
+<h3 class="anchored" data-anchor-id="wannier-function-12">Wannier function</h3>
+</section>
+<section id="wannier-function-13" class="level3">
+<h3 class="anchored" data-anchor-id="wannier-function-13">Wannier function</h3>
+</section>
+<section id="wannier-function-14" class="level3">
+<h3 class="anchored" data-anchor-id="wannier-function-14">Wannier function</h3>
+</section>
+<section id="wannier-function-15" class="level3">
+<h3 class="anchored" data-anchor-id="wannier-function-15">Wannier function</h3>
+</section>
+<section id="wannier-function-16" class="level3">
+<h3 class="anchored" data-anchor-id="wannier-function-16">Wannier function</h3>
+</section>
+<section id="wannier-function-17" class="level3">
+<h3 class="anchored" data-anchor-id="wannier-function-17">Wannier function</h3>
+</section>
+<section id="wannier-function-18" class="level3">
+<h3 class="anchored" data-anchor-id="wannier-function-18">Wannier function</h3>
+</section>
+<section id="wannier-function-19" class="level3">
+<h3 class="anchored" data-anchor-id="wannier-function-19">Wannier function</h3>
+</section>
+<section id="wannier-function-20" class="level3">
+<h3 class="anchored" data-anchor-id="wannier-function-20">Wannier function</h3>
+</section>
+</section>
+</section>
+<section id="wannier-function-21" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-22" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-23" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-24" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-25" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-26" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-27" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-28" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-29" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-30" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-31" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-32" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-33" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-34" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-35" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-36" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-37" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-38" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-39" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-40" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-41" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-42" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-43" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-44" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-45" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-46" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-47" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-48" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-49" class="level1">
+<h1>Wannier function</h1>
+</section>
+<section id="wannier-function-50" class="level1">
+<h1>Wannier function</h1>
+<!-- ![](./hxlwq.jpg) -->
 <p>
 <a href="../index.html">back</a>
 </p>
 <script src="https://giscus.app/client.js" data-repo="ieNcos/ieNcos.github.io" data-repo-id="R_kgDOQ1upBA" data-category="Announcements" data-category-id="DIC_kwDOQ1upBM4C1Eoh" data-mapping="pathname" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
 </script>
-</section>
-</section>
 </section>
 
 </main>
