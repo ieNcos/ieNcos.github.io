@@ -276,7 +276,61 @@ F_B &amp;= -k_\text{B}T\ln Z_B
 我们先证明一个比较简单的情景.</p>
 <h3 id="绝热情况">绝热情况</h3>
 <p>现在我们先考虑一个比较简单的情况——系统在随<span
-class="math inline">\(\lambda(t)\)</span>演化的过程中不和大热源接触，单独演化</p>
+class="math inline">\(\lambda(t)\)</span>演化的过程中不和大热源接触，单独演化.</p>
+<p>这种情况下，如果给定初始微观态<span
+class="math inline">\(z_0\)</span>，系统在相空间里就有确定的演化路径<span
+class="math inline">\(z(z_0, t), t\in [t_A, t_B]\)</span>，满足<span
+class="math inline">\(z(z_0, t_A) = z_0\)</span>.</p>
+<p>由于相空间的轨迹不会重合，如果一个系统在<span
+class="math inline">\(t\)</span>时刻位于<span
+class="math inline">\(z\)</span>这个位置，那么它的演化历史和初始位置都是确定的.
+关于初始位置有<span class="math inline">\(z_0 = z_0(z, t)\)</span>.
+而既然演化路径是确定的，在这个过程中外界对系统做的共<span
+class="math inline">\(W\)</span>也是确定的，我们把系统演化到<span
+class="math inline">\((z,
+t)\)</span>状态，在整个历史路径上被做的功为<span class="math inline">\(W
+= W(z, t) = H_{\lambda(t)}(z) - H_A(z_0(z, t))\)</span>.</p>
+<p><span class="math inline">\(t_B\)</span>时刻的功的期望值为： <span
+class="math display">\[\begin{align*}
+\langle\exp(-\beta W)\rangle
+&amp;= \frac{1}{Z_A}\int\mathrm{d}z_0(z,t) \mathrm{e}^{-\beta
+H_A(z_0(z,t_B))} \mathrm{e}^{-\beta W(z,t_B)}\\
+&amp;= \frac{1}{Z_A}\int\mathrm{d}z \mathrm{e}^{-\beta H_B(z)}\\
+&amp;= \frac{Z_B}{Z_A}\\
+&amp;=\exp(-\beta \Delta F)
+\end{align*}\]</span></p>
+<p>这里用到了刘维尔定理：<span class="math inline">\(\mathrm{d}z =
+\mathrm{d}z_0\)</span></p>
+<h3 id="与热源接触的情况">与热源接触的情况</h3>
+<p>现在我们回到原本的情况：在<span class="math inline">\(t\in [t_A,
+t_B]\)</span>的过程中，系统始终与热源接触.
+这个过程中系统在相空间中的演化是具有随机性的.
+但是如果考虑热源+系统作为一个整体在总的相空间中演化，则不具有随机性.</p>
+<p>也就是说，<span class="math inline">\(z\)</span>的演化即使在给定<span
+class="math inline">\(z_0\)</span>的时候也有随机性，但<span
+class="math inline">\((z_R, z)\)</span>的演化在给定初值后就是确定的.</p>
+<p>设<span class="math inline">\(H = H_R + H_{int} +
+H_S\)</span>，三项分别为热源、相互作用和系统的哈密顿量.</p>
+<p><span class="math inline">\(Y = \int \exp (-\beta H) = \int
+\mathrm{d}z_R \mathrm{d}z \exp (-\beta (H_R(z_R) + H_{int}(z_R, z) +
+H_S(z)))\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\langle\exp(-\beta W)\rangle = \frac{Y_B}{Y_A}
+\end{align*}\]</span></p>
+<p>后面这里我记不太清原论文的说法了，Jarzynski好像使用准静态过程进行了分析.
+（i.e.以下内容不保证正确）.</p>
+<p>如果<span class="math inline">\(H_{int} \sim
+0\)</span>可以被忽略的话（注意，一般意义上的“热源”是满足这个条件的，比如一个和理想气体接触的热源，仅仅通过隔板进行热交换，那么<span
+class="math inline">\(H_{int} \sim L^2 \ll L^3 \sim H_S \ll
+H_R\)</span>），对<span class="math inline">\(z\)</span>和<span
+class="math inline">\(z_R\)</span>的积分就可以解耦，<span
+class="math inline">\(Y\)</span>就可以被分解成<span
+class="math inline">\(Y=Z_R Z\)</span>，而<span
+class="math inline">\(Z_R\)</span>本身是不会变化的（大热源温度不变，虽然有放热但<span
+class="math inline">\(Z_R\)</span>不变）. 于是<span
+class="math inline">\(Y_B/Y_A =
+Z_B/Z_A\)</span>，于是我们就得到了结果.</p>
+<h2 id="croop-relation">croop relation</h2>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
