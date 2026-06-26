@@ -11,3 +11,4 @@ blog/*
 blog/*/*
 !blog/*/*.html
 diary
+blog/untracked_wintertraining_1.html
