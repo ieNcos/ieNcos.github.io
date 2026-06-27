@@ -12,8 +12,4 @@ blog/*/*
 !blog/*/*.html
 diary
 blog/untracked_wintertraining_1.html
-./mental health
-!mental health/*.html
-!mental health/*/
-mental health/*/*
-!mental health/*/*.html
+mental health
