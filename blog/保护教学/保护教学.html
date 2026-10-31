@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-10-31 Sat 17:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>保护教学</title>
+<meta name="author" content="ieNcos" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">保护教学</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge721d8c">1. 流程</a></li>
+<li><a href="#org15ea35e">2. 结构</a>
+<ul>
+<li><a href="#orgdcdbe98">2.1. 主绳</a></li>
+<li><a href="#org7e3d2e3">2.2. 安全带</a></li>
+<li><a href="#orgdff9aef">2.3. 绳结</a></li>
+<li><a href="#org1e1b69c">2.4. 锁具</a></li>
+<li><a href="#orgc02a3bb">2.5. 保护器</a>
+<ul>
+<li><a href="#orga7dc0c8">2.5.1. ATC</a></li>
+<li><a href="#org237388b">2.5.2. 如何取用装备（如何使用锁）</a></li>
+</ul>
+</li>
+<li><a href="#org5e2efee">2.6. 劳保手套</a></li>
+</ul>
+</li>
+<li><a href="#orga9ca7fc">3. 保护原理</a>
+<ul>
+<li><a href="#orga0a72cc">3.1. 概述</a></li>
+<li><a href="#org0500586">3.2. 上线前检查 9 7 5</a></li>
+<li><a href="#org55e54a6">3.3. 上线前提醒攀爬者</a></li>
+<li><a href="#orgc63464f">3.4. </a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge721d8c" class="outline-2">
+<h2 id="orge721d8c"><span class="section-number-2">1.</span> 流程</h2>
+<div class="outline-text-2" id="text-1">
+<ol class="org-ol">
+<li>点名</li>
+<li>演示一遍、讲解基本原理（高端）</li>
+<li>发安全带和绳子，发ATC
+介绍各个结构
+<ol class="org-ol">
+<li>主绳</li>
+<li>安全带（每人领一个安全带）</li>
+<li>绳结</li>
+<li>主锁</li>
+<li>ATC</li>
+</ol></li>
+<li>介绍上线之前需要检查什么</li>
+<li>介绍5步收绳如何操作</li>
+<li><p>
+实操练习
+实操练习的过程中练什么？
+</p>
+<ol class="org-ol">
+<li>一部分人练习八字结</li>
+<li>一部分人练习实操</li>
+<li>一部分人练习书包</li>
+<li>一部分人练习如何操作锁具，如何安装</li>
+</ol>
+
+<p>
+这就对应着需要多少老队员；5条线实操，对应5个副保和5个攀爬者；八字结需要一个老队员看着；书包线需要一个老队员看着；锁具安装需要一个老队员看着
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org15ea35e" class="outline-2">
+<h2 id="org15ea35e"><span class="section-number-2">2.</span> 结构</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgdcdbe98" class="outline-3">
+<h3 id="orgdcdbe98"><span class="section-number-3">2.1.</span> 主绳</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>分类：动力/静力，各自用途</li>
+<li>结构：绳皮绳芯</li>
+<li>老化：从绳皮绳芯两部分来看</li>
+<li>使用注意：
+<ol class="org-ol">
+<li>不要踩不要磨</li>
+<li>避免扭曲</li>
+<li>保持干燥</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org7e3d2e3" class="outline-3">
+<h3 id="org7e3d2e3"><span class="section-number-3">2.2.</span> 安全带</h3>
+<div class="outline-text-3" id="text-2-2">
+<ol class="org-ol">
+<li>结构介绍</li>
+<li>如何不穿拧</li>
+<li>简单介绍绳索连接，同时讲解安全带分类</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgdff9aef" class="outline-3">
+<h3 id="orgdff9aef"><span class="section-number-3">2.3.</span> 绳结</h3>
+<div class="outline-text-3" id="text-2-3">
+<ol class="org-ol">
+<li>如何连接</li>
+<li>单八-&gt;双八-&gt;编八 让大家分组练习</li>
+<li>防脱节</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1e1b69c" class="outline-3">
+<h3 id="org1e1b69c"><span class="section-number-3">2.4.</span> 锁具</h3>
+<div class="outline-text-3" id="text-2-4">
+<ol class="org-ol">
+<li>承力，人0.6kN，冲坠6kN就可能受伤，锁是足够安全的</li>
+<li>分类
+<ol class="org-ol">
+<li>HMS</li>
+<li>D型锁</li>
+<li>O型锁</li>
+</ol></li>
+<li>材质
+<ol class="org-ol">
+<li>铝</li>
+<li>钢（保护站）</li>
+</ol></li>
+<li>小锁介绍：小、承力</li>
+<li>使用：不能摔</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc02a3bb" class="outline-3">
+<h3 id="orgc02a3bb"><span class="section-number-3">2.5.</span> 保护器</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-orga7dc0c8" class="outline-4">
+<h4 id="orga7dc0c8"><span class="section-number-4">2.5.1.</span> ATC</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<ol class="org-ol">
+<li>观察结构</li>
+<li>现场连接</li>
+<li>介绍原理（摩擦力来源）</li>
+<li>介绍连接要点</li>
+<li>八字环（磨损绳子但适用于冰雪环境）</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org237388b" class="outline-4">
+<h4 id="org237388b"><span class="section-number-4">2.5.2.</span> 如何取用装备（如何使用锁）</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<p>
+移动到小头
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5e2efee" class="outline-3">
+<h3 id="org5e2efee"><span class="section-number-3">2.6.</span> 劳保手套</h3>
+</div>
+</div>
+<div id="outline-container-orga9ca7fc" class="outline-2">
+<h2 id="orga9ca7fc"><span class="section-number-2">3.</span> 保护原理</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orga0a72cc" class="outline-3">
+<h3 id="orga0a72cc"><span class="section-number-3">3.1.</span> 概述</h3>
+</div>
+<div id="outline-container-org0500586" class="outline-3">
+<h3 id="org0500586"><span class="section-number-3">3.2.</span> 上线前检查 9 7 5</h3>
+</div>
+<div id="outline-container-org55e54a6" class="outline-3">
+<h3 id="org55e54a6"><span class="section-number-3">3.3.</span> 上线前提醒攀爬者</h3>
+<div class="outline-text-3" id="text-3-3">
+<ol class="org-ol">
+<li>上线前示意</li>
+<li>不要抓踩挂片</li>
+<li>绳放两手中间</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc63464f" class="outline-3">
+<h3 id="orgc63464f"><span class="section-number-3">3.4.</span> </h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: ieNcos</p>
+<p class="date">Created: 2026-10-31 Sat 17:00</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
